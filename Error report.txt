@@ -1,0 +1,64 @@
+./gradlew migrateTenantListDB -PdbName=mifosplatform-tenants --info
+Listening for transport dt_socket at address: 8005
+Starting Build
+Settings evaluated using empty settings script.
+Projects loaded. Root project using build file '/home/shash/Desktop/gsoc/mifos/mifosx/mifosng-provider/build.gradle'.
+Included projects: [root project 'mifosng-provider']
+Evaluating root project 'mifosng-provider' using build file '/home/shash/Desktop/gsoc/mifos/mifosx/mifosng-provider/build.gradle'.
+Starting file lock listener thread.
+Registering deferred Rebel plugin configuration...
+Adding license extension
+Adding download licenses extension
+Adding license extension rule
+Applying defaults to download task: :downloadLicenses
+Adding license tasks for sourceSet licenseMain
+Applying license defaults to task: :licenseMain
+Applying license defaults to task: :licenseFormatMain
+Adding license tasks for sourceSet licenseTest
+Applying license defaults to task: :licenseTest
+Applying license defaults to task: :licenseFormatTest
+[rebel] Configuring Rebel plugin...
+Adding license tasks for sourceSet licenseIntegrationTest
+Applying license defaults to task: :licenseIntegrationTest
+Applying license defaults to task: :licenseFormatIntegrationTest
+Configuring agent
+All projects evaluated.
+Selected primary task 'migrateTenantListDB'
+Tasks to be executed: [task ':migrateTenantListDB']
+:migrateTenantListDB (Thread[main,5,main]) started.
+:migrateTenantListDB
+Executing task ':migrateTenantListDB' (up-to-date check took 0.0 secs) due to:
+  Task has not declared any outputs.
+Executing task ':flywayMigrate' (up-to-date check took 0.0 secs) due to:
+  Task has not declared any outputs.
+Adding managed exclusion rule commons-logging:commons-logging to DefaultExternalModuleDependency{group='org.springframework.boot', name='spring-boot-starter-test', version='1.1.6.RELEASE', configuration='default'}
+Adding implicit managed exclusion rules to starter DefaultExternalModuleDependency{group='org.springframework.boot', name='spring-boot-starter-test', version='1.1.6.RELEASE', configuration='default'}
+Adding implicit managed exclusion rules to starter DefaultExternalModuleDependency{group='org.springframework.boot', name='spring-boot-starter-web', version='1.1.6.RELEASE', configuration='default'}
+Adding implicit managed exclusion rules to starter DefaultExternalModuleDependency{group='org.springframework.boot', name='spring-boot-starter-data-jpa', version='1.1.6.RELEASE', configuration='default'}
+Adding implicit managed exclusion rules to starter DefaultExternalModuleDependency{group='org.springframework.boot', name='spring-boot-starter-security', version='1.1.6.RELEASE', configuration='default'}
+Adding managed exclusion rule commons-logging:commons-logging to DefaultExternalModuleDependency{group='org.apache.httpcomponents', name='httpclient', version='4.3.5', configuration='default'}
+Adding implicit managed exclusion rules to starter DefaultExternalModuleDependency{group='org.springframework.boot', name='spring-boot-starter-tomcat', version='null', configuration='default'}
+:migrateTenantListDB FAILED
+:migrateTenantListDB (Thread[main,5,main]) completed. Took 1.088 secs.
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file '/home/shash/Desktop/gsoc/mifos/mifosx/mifosng-provider/build.gradle' line: 296
+
+* What went wrong:
+Execution failed for task ':flywayMigrate'.
+> Error occurred while executing flywayMigrate
+  Unable to obtain Jdbc connection from DataSource (jdbc:mysql://localhost:3306/mifosplatform-tenants) for user 'root'
+  Communications link failure
+  
+  The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+  Connection refused
+
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 6.775 secs
